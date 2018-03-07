@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Dimenics</Authors>
+    <Company>Dimenics</Company>
+    <Product>Dimenics</Product>
+    <Description>In memory caching</Description>
+    <Copyright>Copyright © 2017</Copyright>
+    <PackageProjectUrl>http://www.dimenics.com/products/dime-scheduler/</PackageProjectUrl>
+    <PackageIconUrl>http://dimenuget.azurewebsites.net/Images/dimenuget.png</PackageIconUrl>
+    <RepositoryUrl>https://dimenicsbe.visualstudio.com/DefaultCollection/Dime.Scheduler V2</RepositoryUrl>
+    <RepositoryType>Visual Studio Team Services</RepositoryType>
+    <PackageTags>Dime;Caching</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.0.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dime.Caching\Dime.Caching.csproj" />
+  </ItemGroup>
+
+</Project>

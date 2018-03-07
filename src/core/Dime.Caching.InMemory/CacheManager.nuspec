@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Dime.CacheManager</id>
+    <version>1.0.1</version>
+    <title>Dime.CacheManager</title>
+    <authors>Dimenics</authors>
+    <owners>Dimenics</owners>
+    <iconUrl>http://dimenuget.azurewebsites.net/Images/dimenuget.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Cache Manager</description>
+    <language>en-US</language>
+    <tags>Dime;Caching;InMemory</tags>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\CacheManager.Core.dll" target="lib\CacheManager.Core.dll" />
+    <file src="bin\$configuration$\CacheManager.SystemRuntimeCaching.dll" target="lib\CacheManager.SystemRuntimeCaching.dll" />
+    <file src="bin\$configuration$\CacheManager.Web.dll" target="lib\CacheManager.Web.dll" />
+  </files>
+</package>
