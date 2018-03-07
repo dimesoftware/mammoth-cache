@@ -52,16 +52,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CacheManager.Core, Version=0.9.1.0, Culture=neutral, PublicKeyToken=b254a7d343adadec, processorArchitecture=MSIL">
-      <HintPath>Library\net461\CacheManager.Core.dll</HintPath>
+      <HintPath>..\..\packages\CacheManager.1.0.1\lib\CacheManager.Core.dll</HintPath>
     </Reference>
     <Reference Include="CacheManager.SystemRuntimeCaching, Version=0.9.1.0, Culture=neutral, PublicKeyToken=b254a7d343adadec, processorArchitecture=MSIL">
-      <HintPath>Library\net461\CacheManager.SystemRuntimeCaching.dll</HintPath>
+      <HintPath>..\..\packages\CacheManager.1.0.1\lib\CacheManager.SystemRuntimeCaching.dll</HintPath>
     </Reference>
     <Reference Include="CacheManager.Web, Version=0.9.1.0, Culture=neutral, PublicKeyToken=b254a7d343adadec, processorArchitecture=MSIL">
-      <HintPath>Library\net461\CacheManager.Web.dll</HintPath>
+      <HintPath>..\..\packages\CacheManager.1.0.1\lib\CacheManager.Web.dll</HintPath>
     </Reference>
     <Reference Include="Dime.Caching, Version=2.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Dime.Caching\bin\Debug\netstandard2.0\Dime.Caching.dll</HintPath>
+      <HintPath>..\..\packages\Dime.Caching.2.0.0.2\lib\net461\Dime.Caching.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
