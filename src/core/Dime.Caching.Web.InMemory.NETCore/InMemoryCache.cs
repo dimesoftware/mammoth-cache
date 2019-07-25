@@ -16,7 +16,7 @@ namespace Dime.Caching.Web
         /// <param name="cache"></param>
         public InMemoryCache(c.IMemoryCache cache)
         {
-            this.Cache = cache;
+            Cache = cache;
         }
 
         #endregion Constructor
@@ -38,7 +38,7 @@ namespace Dime.Caching.Web
         public T Get<T>(string key)
         {
             object value = default(object);
-            this.Cache.TryGetValue(key, out value);
+            Cache.TryGetValue(key, out value);
 
             if (value is T)
                 return (T)value;
@@ -63,7 +63,7 @@ namespace Dime.Caching.Web
         /// <param name="value"></param>
         public void Set<T>(string key, T value)
         {
-            c.ICacheEntry entry = this.Cache.CreateEntry(key);
+            c.ICacheEntry entry = Cache.CreateEntry(key);
             entry.Value = value;
         }
 
@@ -73,7 +73,7 @@ namespace Dime.Caching.Web
         /// <param name="key"></param>
         public void Remove(string key)
         {
-            this.Cache.Remove(key);
+            Cache.Remove(key);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Dime.Caching.Web
         /// </summary>
         public void Dispose()
         {
-            this.Cache.Dispose();
+            Cache.Dispose();
         }
 
         #endregion Methods

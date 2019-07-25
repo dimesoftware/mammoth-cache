@@ -2,7 +2,7 @@
 using CacheManager.Core;
 using Newtonsoft.Json;
 
-namespace Dime.Caching.Web
+namespace Dime.Caching
 {
     /// <summary>
     /// In-memory cache for ASP.NET applications using the CacheManager framework.
@@ -50,8 +50,7 @@ namespace Dime.Caching.Web
         private ICacheManager<string> CreateCacheManager()
         {
             return CacheFactory.Build<string>(settings => settings
-                .WithUpdateMode(CacheUpdateMode.Up)
-                .WithSystemWebCacheHandle("handleName")
+                .WithSystemRuntimeCacheHandle("dime-scheduler")
                 .WithExpiration(ExpirationMode.Absolute, TimeSpan.FromMinutes(15))
                 );
         }

@@ -9,7 +9,7 @@
         /// Gets the value from the cache
         /// </summary>
         /// <typeparam name="T">The type of the valule</typeparam>
-        /// <param name="key">The unique key to identify the cache entry</param>        
+        /// <param name="key">The unique key to identify the cache entry</param>
         /// <returns>The value</returns>
         T Get<T>(string key);
     }

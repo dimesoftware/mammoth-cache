@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>net461</TargetFrameworks>
+    <ApplicationIcon />
+    <StartupObject />
+    <Authors>Hendrik Bulens</Authors>
+    <Company>Dimenics</Company>
+    <Product>Dime</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>http://dimenuget.azurewebsites.net/Images/dimenuget.png</PackageIconUrl>
+    <PackageProjectUrl>https://dev.azure.com/dimenicsbe/Utilities/</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Caching</PackageTags>
+    <RepositoryUrl>https://dev.azure.com/dimenicsbe/Utilities/_git/Dime.Caching</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Description>In memory caching via System Runtime Caching</Description>
+    <Version>1.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CacheManager.Core" Version="1.2.0" />
+    <PackageReference Include="CacheManager.SystemRuntimeCaching" Version="1.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dime.Caching\Dime.Caching.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dime.Caching.CacheManager.InMemory.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>
