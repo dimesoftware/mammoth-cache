@@ -1,37 +1,43 @@
-﻿using CacheManager.Core;
+﻿using System;
+using CacheManager.Core;
 using Newtonsoft.Json;
-using System;
 
 namespace Dime.Caching.Web
 {
     /// <summary>
-    /// In Memory Cache for ASP.NET applications. This class is suitable for single-server setups.
+    /// In-memory cache for ASP.NET applications using the CacheManager framework.
+    /// This class is suitable for single-server setups.
     /// </summary>
     public class InMemoryCache : ICache
     {
         #region Constructor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InMemoryCache"/> class
+        /// </summary>
         public InMemoryCache()
         {
-            try
-            {
-                this.CacheManager = CacheFactory.Build<string>(settings => settings
-                .WithUpdateMode(CacheUpdateMode.Up)
-                .WithSystemWebCacheHandle("handleName")
-                .WithExpiration(ExpirationMode.Absolute, TimeSpan.FromMinutes(15))
-                );
-            }
-            catch (Exception)
-            {
-                // Swallow exception. If cache manager is null, we know why
-            }
         }
 
         #endregion Constructor
 
         #region Properties
 
-        private ICacheManager<string> CacheManager { get; set; }
+        private static ICacheManager<string> _cacheManager;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ICacheManager<string> CacheManager
+        {
+            get
+            {
+                if (_cacheManager == null)
+                    _cacheManager = CreateCacheManager();
+
+                return _cacheManager;
+            }
+        }
 
         #endregion Properties
 
@@ -40,47 +46,57 @@ namespace Dime.Caching.Web
         /// <summary>
         ///
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
         /// <returns></returns>
+        private ICacheManager<string> CreateCacheManager()
+        {
+            return CacheFactory.Build<string>(settings => settings
+                .WithUpdateMode(CacheUpdateMode.Up)
+                .WithSystemWebCacheHandle("handleName")
+                .WithExpiration(ExpirationMode.Absolute, TimeSpan.FromMinutes(15))
+                );
+        }
+
+        /// <summary>
+        /// Gets the value from the cache
+        /// </summary>
+        /// <typeparam name="T">The type of the value</typeparam>
+        /// <param name="key">The unique key to identify the cache entry</param>
+        /// <returns>The value</returns>
         public T Get<T>(string key)
         {
             try
             {
-                string cachedItem = this.CacheManager?.Get(key);
-                if (!string.IsNullOrEmpty(cachedItem))
-                {
-                    return JsonConvert.DeserializeObject<T>(cachedItem);
-                }
-                else
-                {
-                    return default(T);
-                }
+                string cachedItem = CacheManager?.Get(key);
+                return !string.IsNullOrEmpty(cachedItem) ? JsonConvert.DeserializeObject<T>(cachedItem) : default;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return default(T);
+                return default;
             }
         }
 
         /// <summary>
-        ///
+        /// Sets the value in the cache
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        public void Set<T>(string key, T value)
-        {
-            this.CacheManager?.Put(key, JsonConvert.SerializeObject(value));
-        }
+        /// <typeparam name="T">The type of the value</typeparam>
+        /// <param name="key">The unique key to identify the cache entry</param>
+        /// <param name="value">The value</param>
+        public void Set<T>(string key, T value) 
+            => CacheManager?.Put(key, JsonConvert.SerializeObject(value));
 
         /// <summary>
-        ///
+        /// Removes the value from the cache
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">The identifier of the cache entry</param>
         public void Remove(string key)
         {
-            this.CacheManager?.Remove(key);
+            try
+            {
+                CacheManager?.Remove(key);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         /// <summary>

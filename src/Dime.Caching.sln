@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching", "core\Dime.Caching\Dime.Caching.csproj", "{E1C7C164-52CD-4794-B512-D98ACFD7941E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.Caching.Web.InMemory", "core\Dime.Caching.InMemory\Dime.Caching.Web.InMemory.csproj", "{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.Caching.Web.InMemory", "core\Dime.Caching.Web.InMemory\Dime.Caching.Web.InMemory.csproj", "{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching.Web.InMemory.NETCore", "core\Dime.Caching.Web.InMemory.NETCore\Dime.Caching.Web.InMemory.NETCore.csproj", "{609E9B29-CF02-4547-9C1D-5D958BE810A1}"
 EndProject
