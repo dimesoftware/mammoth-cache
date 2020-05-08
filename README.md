@@ -1,20 +1,33 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Introduction
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Simple caching contracts and implementation using existing caching frameworks.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Getting Started
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- You must have Visual Studio 2019 Community or higher.
+- The dotnet cli is also highly recommended.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## About this project
+
+This project provides a framework agnostic `ICache` interface which contains a set of methods such as  `Set<T>` and `Get<T>`. The project also includes a few implementations of the `ICache`, mostly `CacheManager` was used.
+
+The primary goal of this project is to have a **facade** that abstracts the underlying implementations, which may vary greatly. For example, during development, you may want to use an in-memory cache. However, this rarely suffices for production-purposes. Without having to redesign the application, you can create a wrapper of your preferred caching framework and inject it into the application with the `ICache` interface.
+
+## Build and Test
+
+- Run dotnet restore
+- Run dotnet build
+- Run dotnet test
+
+## Installation
+
+`dotnet add package Dime.Caching`
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
+
+# License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)

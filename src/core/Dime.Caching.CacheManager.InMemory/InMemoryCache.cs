@@ -28,16 +28,7 @@ namespace Dime.Caching
         /// <summary>
         ///
         /// </summary>
-        public ICacheManager<string> CacheManager
-        {
-            get
-            {
-                if (_cacheManager == null)
-                    _cacheManager = CreateCacheManager();
-
-                return _cacheManager;
-            }
-        }
+        public ICacheManager<string> CacheManager => _cacheManager ?? (_cacheManager = CreateCacheManager());
 
         #endregion Properties
 
@@ -47,18 +38,16 @@ namespace Dime.Caching
         ///
         /// </summary>
         /// <returns></returns>
-        private ICacheManager<string> CreateCacheManager()
-        {
-            return CacheFactory.Build<string>(settings => settings
+        private ICacheManager<string> CreateCacheManager() =>
+            CacheFactory.Build<string>(settings => settings
                 .WithSystemRuntimeCacheHandle("dime-scheduler")
                 .WithExpiration(ExpirationMode.Absolute, TimeSpan.FromMinutes(15))
-                );
-        }
+            );
 
         /// <summary>
         /// Gets the value from the cache
         /// </summary>
-        /// <typeparam name="T">The type of the valule</typeparam>
+        /// <typeparam name="T">The type of the value</typeparam>
         /// <param name="key">The unique key to identify the cache entry</param>
         /// <returns>The value</returns>
         public T Get<T>(string key)
@@ -66,27 +55,22 @@ namespace Dime.Caching
             try
             {
                 string cachedItem = CacheManager?.Get(key);
-                if (!string.IsNullOrEmpty(cachedItem))
-                    return JsonConvert.DeserializeObject<T>(cachedItem);
-                else
-                    return default(T);
+                return !string.IsNullOrEmpty(cachedItem) ? JsonConvert.DeserializeObject<T>(cachedItem) : default;
             }
             catch (Exception)
             {
-                return default(T);
+                return default;
             }
         }
 
         /// <summary>
         /// Sets the value in the cache
         /// </summary>
-        /// <typeparam name="T">The type of the valule</typeparam>
+        /// <typeparam name="T">The type of the value</typeparam>
         /// <param name="key">The unique key to identify the cache entry</param>
         /// <param name="value">The value</param>
-        public void Set<T>(string key, T value)
-        {
-            CacheManager?.Put(key, JsonConvert.SerializeObject(value));
-        }
+        public void Set<T>(string key, T value) 
+            => CacheManager?.Put(key, JsonConvert.SerializeObject(value));
 
         /// <summary>
         /// Removes the value from the cache
@@ -108,6 +92,7 @@ namespace Dime.Caching
         /// </summary>
         public void Dispose()
         {
+            CacheManager?.Dispose();
         }
 
         #endregion Methods

@@ -37,21 +37,18 @@ namespace Dime.Caching.Web
         /// <returns></returns>
         public T Get<T>(string key)
         {
-            object value = default(object);
-            Cache.TryGetValue(key, out value);
+            Cache.TryGetValue(key, out var value);
 
-            if (value is T)
-                return (T)value;
-            else
+            if (value is T value1)
+                return value1;
+            
+            try
             {
-                try
-                {
-                    return (T)Convert.ChangeType(value, typeof(T));
-                }
-                catch (InvalidCastException)
-                {
-                    return default(T);
-                }
+                return (T)Convert.ChangeType(value, typeof(T));
+            }
+            catch (InvalidCastException)
+            {
+                return default(T);
             }
         }
 
@@ -71,18 +68,14 @@ namespace Dime.Caching.Web
         ///
         /// </summary>
         /// <param name="key"></param>
-        public void Remove(string key)
-        {
-            Cache.Remove(key);
-        }
+        public void Remove(string key) 
+            => Cache.Remove(key);
 
         /// <summary>
         ///
         /// </summary>
-        public void Dispose()
-        {
-            Cache.Dispose();
-        }
+        public void Dispose() 
+            => Cache.Dispose();
 
         #endregion Methods
     }

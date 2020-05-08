@@ -1,4 +1,7 @@
 **/bin
 **/obj
 *.vs
-**/packages
+TestResults
+**/**.DotSettings.user
+NuGet.config
+src/packages/**
