@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29102.190
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching", "core\Dime.Caching\Dime.Caching.csproj", "{E1C7C164-52CD-4794-B512-D98ACFD7941E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.Caching.Web.InMemory", "core\Dime.Caching.Web.InMemory\Dime.Caching.Web.InMemory.csproj", "{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching.Web.InMemory", "core\Dime.Caching.Web.InMemory\Dime.Caching.Web.InMemory.csproj", "{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching.Web.InMemory.NETCore", "core\Dime.Caching.Web.InMemory.NETCore\Dime.Caching.Web.InMemory.NETCore.csproj", "{609E9B29-CF02-4547-9C1D-5D958BE810A1}"
 EndProject
@@ -14,32 +14,23 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		NuGet|Any CPU = NuGet|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E1C7C164-52CD-4794-B512-D98ACFD7941E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1C7C164-52CD-4794-B512-D98ACFD7941E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1C7C164-52CD-4794-B512-D98ACFD7941E}.NuGet|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1C7C164-52CD-4794-B512-D98ACFD7941E}.NuGet|Any CPU.Build.0 = Debug|Any CPU
 		{E1C7C164-52CD-4794-B512-D98ACFD7941E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1C7C164-52CD-4794-B512-D98ACFD7941E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}.NuGet|Any CPU.ActiveCfg = Release|Any CPU
-		{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}.NuGet|Any CPU.Build.0 = Release|Any CPU
 		{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68583F1A-862B-48A4-AA7F-1D7E8AD0D89A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.NuGet|Any CPU.ActiveCfg = Debug|Any CPU
-		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.NuGet|Any CPU.Build.0 = Debug|Any CPU
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E085C464-6848-453D-9E5A-37FC7F4E05E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E085C464-6848-453D-9E5A-37FC7F4E05E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E085C464-6848-453D-9E5A-37FC7F4E05E0}.NuGet|Any CPU.ActiveCfg = Debug|Any CPU
-		{E085C464-6848-453D-9E5A-37FC7F4E05E0}.NuGet|Any CPU.Build.0 = Debug|Any CPU
 		{E085C464-6848-453D-9E5A-37FC7F4E05E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E085C464-6848-453D-9E5A-37FC7F4E05E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

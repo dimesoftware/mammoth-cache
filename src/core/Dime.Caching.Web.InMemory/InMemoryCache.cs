@@ -10,8 +10,6 @@ namespace Dime.Caching.Web
     /// </summary>
     public class InMemoryCache : ICache
     {
-        #region Constructor
-
         /// <summary>
         /// Initializes a new instance of the <see cref="InMemoryCache"/> class
         /// </summary>
@@ -19,15 +17,8 @@ namespace Dime.Caching.Web
         {
         }
 
-        #endregion Constructor
-
-        #region Properties
-
         private static ICacheManager<string> _cacheManager;
 
-        /// <summary>
-        ///
-        /// </summary>
         public ICacheManager<string> CacheManager
         {
             get
@@ -39,14 +30,6 @@ namespace Dime.Caching.Web
             }
         }
 
-        #endregion Properties
-
-        #region Methods
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <returns></returns>
         private ICacheManager<string> CreateCacheManager()
         {
             return CacheFactory.Build<string>(settings => settings
@@ -99,13 +82,8 @@ namespace Dime.Caching.Web
             }
         }
 
-        /// <summary>
-        ///
-        /// </summary>
         public void Dispose()
         {
         }
-
-        #endregion Methods
     }
 }
