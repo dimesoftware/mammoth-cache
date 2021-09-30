@@ -7,7 +7,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <AssemblyTitle>Dime.Caching.Web.InMemory</AssemblyTitle>
-    <Company>Dimenics</Company>
+    <Company>Dime Software</Company>
     <Product>Dimenics</Product>
     <Description>In memory caching for web projects.</Description>
     <Copyright>Copyright © 2021</Copyright>
@@ -23,7 +23,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Caching</PackageTags>
     <NeutralLanguage>English</NeutralLanguage>
-    <Authors>Dimenics</Authors>
+    <Authors>Dime Software</Authors>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CacheManager.Core" Version="1.2.0" />

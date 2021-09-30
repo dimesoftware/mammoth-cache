@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Authors>Dimenics</Authors>
+    <Authors>Dime Software</Authors>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net461;net5.0;net6.0</TargetFrameworks>
     <AssemblyName>Dime.Caching</AssemblyName>
     <PackageId>Dime.Caching</PackageId>
-    <PackageIconUrl>http://dimenuget.azurewebsites.net/Images/dimenuget.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>

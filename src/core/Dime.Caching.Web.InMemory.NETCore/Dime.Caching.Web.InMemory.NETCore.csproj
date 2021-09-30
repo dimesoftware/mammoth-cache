@@ -12,8 +12,8 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Dimenics</Authors>
-    <Company>Dimenics</Company>
+    <Authors>Dime Software</Authors>
+    <Company>Dime Software</Company>
     <Product>Dimenics</Product>
     <Description>In memory caching</Description>
     <Copyright>Copyright © 2020</Copyright>
