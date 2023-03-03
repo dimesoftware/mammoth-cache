@@ -15,8 +15,9 @@
     <h1>Mammoth Cache</h1>
 </div>
 
-Simple caching contracts and implementation using existing caching frameworks.
+A caching library that provides mammoth-sized caching capabilities, just like the extinct mammoth.
 
+More seriously though, this library is mostly a decorator that decorates existing caching frameworks and exposes a single API.
 ## About this project
 
 This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. The project also includes implementations of the `ICache`, such as the `InMemoryCache` class.
