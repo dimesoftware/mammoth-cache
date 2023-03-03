@@ -6,6 +6,7 @@
     <i>Elephants never forget</i>
 </div>
 
+<div>&nbsp;</div>
 <div align="center">
     <img src="http://img.shields.io/:license-mit-brightgreen.svg?style=flat-square" />
 </div>
