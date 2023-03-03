@@ -1,15 +1,26 @@
-# Introduction
+<div align="center">
+    <img src="assets/logo.png" height="300" />
+</div>
+
+<div align="center" style="margin-bottom:15px">
+    <i>Elephants never forget</i>
+</div>
+
+<div align="center">
+    <img src="http://img.shields.io/:license-mit-brightgreen.svg?style=flat-square" />
+</div>
+
+<div align="center">
+    <h1>Caching</h1>
+</div>
+
+
 
 Simple caching contracts and implementation using existing caching frameworks.
 
-## Getting Started
-
-- You must have Visual Studio 2019 Community or higher.
-- The dotnet cli is also highly recommended.
-
 ## About this project
 
-This project provides a framework agnostic `ICache` interface which contains a set of methods such as  `Set<T>` and `Get<T>`. The project also includes a few implementations of the `ICache`, mostly `CacheManager` was used.
+This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. The project also includes a few implementations of the `ICache`, mostly `CacheManager` was used.
 
 The primary goal of this project is to have a **facade** that abstracts the underlying implementations, which may vary greatly. For example, during development, you may want to use an in-memory cache. However, this rarely suffices for production-purposes. Without having to redesign the application, you can create a wrapper of your preferred caching framework and inject it into the application with the `ICache` interface.
 
@@ -30,4 +41,4 @@ Please make sure to update tests as appropriate.
 
 # License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![License](http://img.shields.io/:license-mit-brightgreen.svg?style=flat-square)](http://badges.mit-license.org)
