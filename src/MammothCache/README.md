@@ -12,7 +12,7 @@ Without having to redesign the application, you can create a wrapper of your pre
 	
 ## Installation
 
-`dotnet add package Dime.Caching`
+`dotnet add package MammothCache`
 
 ## Contributing
 

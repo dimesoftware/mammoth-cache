@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Dime.Caching.Web
+namespace MammothCache.Web
 {
     public class InMemoryCache : ICache
     {

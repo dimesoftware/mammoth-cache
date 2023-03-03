@@ -1,4 +1,4 @@
-﻿namespace Dime.Caching
+﻿namespace MammothCache
 {
     /// <summary>
     /// Contracts of the capabilities of the cache

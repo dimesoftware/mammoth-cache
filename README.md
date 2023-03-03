@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-    <i>Elephants never forget</i>
+    <i>Because elephantidae never forget</i>
 </div>
 
 <div>&nbsp;</div>
@@ -12,7 +12,7 @@
 </div>
 
 <div align="center">
-    <h1>Caching</h1>
+    <h1>Mammoth Cache</h1>
 </div>
 
 Simple caching contracts and implementation using existing caching frameworks.
@@ -33,7 +33,7 @@ Without having to redesign the application, you can create a wrapper of your pre
 
 ## Installation
 
-`dotnet add package Dime.Caching`
+`dotnet add package MammothCache`
 
 ## Contributing
 
