@@ -9,7 +9,7 @@ This package is an implementation of this contract for **Redis** using the popul
 	
 ## Installation
 
-`dotnet add package Dime.Caching.Redis`
+`dotnet add package MammothCache.Redis`
 
 ## Contributing
 

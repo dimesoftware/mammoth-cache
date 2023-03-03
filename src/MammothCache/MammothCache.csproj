@@ -15,14 +15,14 @@
 	<PropertyGroup>
 		<Authors>Dime Software</Authors>
 		<TargetFrameworks>net461;net7.0</TargetFrameworks>
-		<AssemblyName>Dime.Caching</AssemblyName>
-		<PackageId>Dime.Caching</PackageId>
+		<AssemblyName>MammothCache</AssemblyName>
+		<PackageId>MammothCache</PackageId>
 		<PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
 		<Copyright>Copyright © 2023</Copyright>
-		<PackageProjectUrl>https://github.com/dimesoftware/caching</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/dimesoftware/mammoth-cache</PackageProjectUrl>
 		<RepositoryUrl></RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Description>Generic caching class definitions</Description>

@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-    <i>Elephants never forget</i>
+    <i>Because elephantidae never forget</i>
 </div>
 
 <div>&nbsp;</div>
@@ -12,11 +12,12 @@
 </div>
 
 <div align="center">
-    <h1>Caching</h1>
+    <h1>Mammoth Cache</h1>
 </div>
 
-Simple caching contracts and implementation using existing caching frameworks.
+A caching library that provides mammoth-sized caching capabilities, just like the extinct mammoth.
 
+More seriously though, this library is mostly a decorator that decorates existing caching frameworks and exposes a single API.
 ## About this project
 
 This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. The project also includes implementations of the `ICache`, such as the `InMemoryCache` class.
@@ -33,7 +34,7 @@ Without having to redesign the application, you can create a wrapper of your pre
 
 ## Installation
 
-`dotnet add package Dime.Caching`
+`dotnet add package MammothCache`
 
 ## Contributing
 

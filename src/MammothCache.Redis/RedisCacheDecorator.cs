@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using StackExchange.Redis;
 
-namespace Dime.Caching.Redis
+namespace MammothCache.Redis
 {
     public class RedisCacheDecorator : ICache
     {
