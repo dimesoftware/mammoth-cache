@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Dime.Caching
+﻿namespace Dime.Caching
 {
     /// <summary>
     /// Contracts of the capabilities of the cache
