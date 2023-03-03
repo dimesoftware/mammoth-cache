@@ -4,6 +4,7 @@
 		<IncludeSource>True</IncludeSource>
 		<IncludeSymbols>True</IncludeSymbols>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<PropertyGroup>
 		<AssemblyVersion>2.0.0.0</AssemblyVersion>
@@ -34,5 +35,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Dime.Caching\Dime.Caching.csproj" />
 	</ItemGroup>
-
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 </Project>
