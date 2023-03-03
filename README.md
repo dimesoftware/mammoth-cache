@@ -2,7 +2,7 @@
     <img src="assets/logo.png" height="300" />
 </div>
 
-<div align="center" style="margin-bottom:15px">
+<div align="center">
     <i>Elephants never forget</i>
 </div>
 
@@ -14,15 +14,15 @@
     <h1>Caching</h1>
 </div>
 
-
-
 Simple caching contracts and implementation using existing caching frameworks.
 
 ## About this project
 
-This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. The project also includes a few implementations of the `ICache`, mostly `CacheManager` was used.
+This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. The project also includes implementations of the `ICache`, such as the `InMemoryCache` class.
 
-The primary goal of this project is to have a **facade** that abstracts the underlying implementations, which may vary greatly. For example, during development, you may want to use an in-memory cache. However, this rarely suffices for production-purposes. Without having to redesign the application, you can create a wrapper of your preferred caching framework and inject it into the application with the `ICache` interface.
+The primary goal of this project is to decorate existing caching frameworks and abstract the underlying implementations, which may vary greatly. For instance, during development, you may want to use an **in-memory** cache. However, this rarely suffices for production purposes, where you might want to consider **Redis**, just to name one. 
+
+Without having to redesign the application, you can create a wrapper of your preferred caching framework and inject it into the application with the `ICache` interface.
 
 ## Build and Test
 
