@@ -1,4 +1,6 @@
-﻿namespace Dime.Caching
+﻿using System;
+
+namespace Dime.Caching
 {
     /// <summary>
     /// Contracts of the capabilities of a read-only cache
@@ -11,7 +13,7 @@
         /// <typeparam name="T">The type of the value</typeparam>
         /// <param name="key">The unique key to identify the cache entry</param>
         /// <param name="value">The value</param>
-        void Set<T>(string key, T value);
+        void Set<T>(string key, T value, TimeSpan? expiry = null);
 
         /// <summary>
         /// Removes the value from the cache
