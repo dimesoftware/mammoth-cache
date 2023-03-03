@@ -7,7 +7,7 @@ namespace Dime.Caching.Redis
 {
     public class RedisCacheDecorator : ICache
     {
-        private readonly IDatabase _cache;
+        protected readonly IDatabase _cache;
 
         public RedisCacheDecorator(IConnectionMultiplexer redis)
         {
