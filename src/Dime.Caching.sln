@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching", "core\Dime.Caching\Dime.Caching.csproj", "{E1C7C164-52CD-4794-B512-D98ACFD7941E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching", "Dime.Caching\Dime.Caching.csproj", "{E1C7C164-52CD-4794-B512-D98ACFD7941E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching.InMemory", "core\Dime.Caching.Web.InMemory.NETCore\Dime.Caching.InMemory.csproj", "{609E9B29-CF02-4547-9C1D-5D958BE810A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Caching.InMemory", "Dime.Caching.InMemory\Dime.Caching.InMemory.csproj", "{609E9B29-CF02-4547-9C1D-5D958BE810A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.Caching.Redis", "Dime.Caching.Redis\Dime.Caching.Redis.csproj", "{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{609E9B29-CF02-4547-9C1D-5D958BE810A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
