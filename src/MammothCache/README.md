@@ -1,6 +1,8 @@
-# Caching
+# MammotCache
 
-Simple caching contracts and implementation using existing caching frameworks.
+A caching library that provides mammoth-sized caching capabilities, just like the extinct mammoth.
+ 
+More seriously though, this library is mostly a decorator that wraps existing caching frameworks and exposes a single API.
 
 ## About this project
 
@@ -12,7 +14,15 @@ Without having to redesign the application, you can create a wrapper of your pre
 	
 ## Installation
 
+Use the base package to use throughout your application:
+
 `dotnet add package MammothCache`
+
+In the startup class of your application, add any of the following packages:
+
+- MammothCache.InMemory
+- MammotCache.Redis
+
 
 ## Contributing
 

@@ -1,15 +1,28 @@
-# Redis Caching Decorator
+# MammotCache
 
-Simple caching contracts and implementation using existing caching frameworks.
+A caching library that provides mammoth-sized caching capabilities, just like the extinct mammoth.
+ 
+More seriously though, this library is mostly a decorator that wraps existing caching frameworks and exposes a single API.
 
 ## About this project
 
-This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. 
-This package is an implementation of this contract for **Redis** using the popular `StackExchange.Redis` package.
+This project provides a framework agnostic `ICache` interface which contains a set of methods such as `Set<T>` and `Get<T>`. The project also includes implementations of the `ICache`, such as the `InMemoryCache` class.
+
+The primary goal of this project is to decorate existing caching frameworks and abstract the underlying implementations, which may vary greatly. For instance, during development, you may want to use an **in-memory** cache. However, this rarely suffices for production purposes, where you might want to consider **Redis**, just to name one. 
+
+Without having to redesign the application, you can create a wrapper of your preferred caching framework and inject it into the application with the `ICache` interface.
 	
 ## Installation
 
-`dotnet add package MammothCache.Redis`
+Use the base package to use throughout your application:
+
+`dotnet add package MammothCache`
+
+In the startup class of your application, add any of the following packages:
+
+- MammothCache.InMemory
+- MammotCache.Redis
+
 
 ## Contributing
 

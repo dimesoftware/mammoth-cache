@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using StackExchange.Redis;
 
-namespace MammothCache.Redis
+namespace MammothCache
 {
     public class RedisCacheDecorator : ICache
     {

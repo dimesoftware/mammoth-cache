@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace MammothCache.Web
+namespace MammothCache
 {
-    public class InMemoryCache : ICache
+    public class InMemoryCacheDecorator : ICache
     {
-        public InMemoryCache(IMemoryCache cache)
+        public InMemoryCacheDecorator(IMemoryCache cache)
         {
             Cache = cache;
         }
@@ -14,7 +14,7 @@ namespace MammothCache.Web
 
         public T Get<T>(string key)
         {
-            Cache.TryGetValue<T>(key, out T value);
+            Cache.TryGetValue(key, out T value);
             return value;
         }
 
