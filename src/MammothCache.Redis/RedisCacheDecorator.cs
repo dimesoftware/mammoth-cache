@@ -29,6 +29,8 @@ namespace MammothCache
             => _cache.StringSetAsync(
                 GetKey(key),
                 JsonSerializer.Serialize(value, new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.IgnoreCycles }),
-                expiry ?? TimeSpan.FromHours(1));
+                expiry);
+
+
     }
 }
