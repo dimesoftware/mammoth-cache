@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using StackExchange.Redis;
@@ -8,10 +10,12 @@ namespace MammothCache
     public class RedisCacheDecorator : ICache
     {
         protected readonly IDatabase _cache;
+        private readonly IConnectionMultiplexer _connectionMultiplexer;
 
         public RedisCacheDecorator(IConnectionMultiplexer redis)
         {
             _cache = redis.GetDatabase();
+            _connectionMultiplexer = redis;
         }
 
         protected virtual string GetKey(string key) => key;
@@ -22,15 +26,27 @@ namespace MammothCache
             return !value.IsNull ? JsonSerializer.Deserialize<T>(value) : default;
         }
 
-        public virtual void Remove(string key)
-            => _cache.KeyDelete(GetKey(key));
-
         public virtual void Set<T>(string key, T value, TimeSpan? expiry)
             => _cache.StringSetAsync(
                 GetKey(key),
                 JsonSerializer.Serialize(value, new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.IgnoreCycles }),
                 expiry);
 
+        public virtual void Remove(string key, bool exactMatch = true)
+        {
+            if (exactMatch)
+            {
+                _cache.KeyDelete(GetKey(key));
+                return;
+            }
 
+            foreach (EndPoint endpoint in _connectionMultiplexer.GetEndPoints())
+            {
+                IServer server = _connectionMultiplexer.GetServer(endpoint);
+                IEnumerable<RedisKey> keys = server.Keys(_cache.Database, pattern: GetKey(key) + "*");
+                foreach (RedisKey redisKey in keys)
+                    _cache.KeyDelete(redisKey);
+            }
+        }
     }
 }

@@ -9,15 +9,16 @@
 	<PropertyGroup>
 		<AssemblyVersion>0.0.1.0</AssemblyVersion>
 		<FileVersion>0.0.1.0</FileVersion>
-		<Version>0.0.1.0</Version>
-		<PackageVersion>0.0.1-alpha.1</PackageVersion>
+		<VersionPrefix>0.0.1.0</VersionPrefix>
+		<VersionSuffix>alpha.2</VersionSuffix>
+		<PackageIcon>logo.png</PackageIcon>
 	</PropertyGroup>
 	<PropertyGroup>
 		<TargetFrameworks>net7.0</TargetFrameworks>
 		<Authors>Dime Software</Authors>
 		<Company>Dime Software</Company>
 		<Product>Mammoth Cache</Product>
-		<Description>In-memory caching</Description>
+		<Description>A caching library that decorates the InMemory cache provider.</Description>
 		<Copyright>Copyright © 2023</Copyright>
 		<PackageProjectUrl>https://github.com/dimesoftware/mammoth-cache</PackageProjectUrl>
 		<PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
@@ -31,11 +32,12 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
 		<ProjectReference Include="..\MammothCache\MammothCache.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="\"/>
+		<None Include="img\logo.png" Pack="true" PackagePath=""/>
 	</ItemGroup>
 </Project>

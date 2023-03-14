@@ -27,7 +27,12 @@ namespace MammothCache
             Cache.Set(key, value, cacheEntryOptions);
         }
 
-        public void Remove(string key)
-            => Cache.Remove(key);
+        public void Remove(string key, bool exactMatch = true)
+        {
+            if (!exactMatch)
+                throw new NotSupportedException("This action is not supported yet");
+
+            Cache.Remove(key);
+        }
     }
 }
