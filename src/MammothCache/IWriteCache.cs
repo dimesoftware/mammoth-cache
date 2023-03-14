@@ -20,6 +20,6 @@ namespace MammothCache
         /// </summary>
         /// <param name="key">The identifier of the cache entry</param>
         /// <param name="exactMatch">A boolean to indicate an exact match or a wildcared</param>
-        void Remove(string key, bool exactMatch);
+        void Remove(string key, bool exactMatch = true);
     }
 }
