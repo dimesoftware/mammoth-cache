@@ -9,11 +9,11 @@
 	<PropertyGroup>
 		<AssemblyVersion>0.0.1.0</AssemblyVersion>
 		<FileVersion>0.0.1.0</FileVersion>
-		<PackageVersion>0.0.1.0-alpha.4</PackageVersion>
+		<PackageVersion>0.0.1.0-alpha.5</PackageVersion>
 		<PackageIcon>logo.png</PackageIcon>
 	</PropertyGroup>
 	<PropertyGroup>
-		<TargetFrameworks>net7.0</TargetFrameworks>
+		<TargetFrameworks>net7.0;net8.0</TargetFrameworks>
 		<Authors>Dime Software</Authors>
 		<Company>Dime Software</Company>
 		<Product>Mammoth Cache</Product>
@@ -36,7 +36,7 @@
 		<ProjectReference Include="..\MammothCache\MammothCache.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="\"/>
-		<None Include="img\logo.png" Pack="true" PackagePath=""/>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+		<None Include="img\logo.png" Pack="true" PackagePath="" />
 	</ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace MammothCache
@@ -18,6 +19,12 @@ namespace MammothCache
             return value;
         }
 
+        public Task<T> GetAsync<T>(string key)
+        {
+            T value = Get<T>(key);
+            return Task.FromResult(value);
+        }
+
         public void Set<T>(string key, T value, TimeSpan? expiry = null)
         {
             MemoryCacheEntryOptions cacheEntryOptions = new();
@@ -27,12 +34,24 @@ namespace MammothCache
             Cache.Set(key, value, cacheEntryOptions);
         }
 
+        public Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
+        {
+            Set(key, value, expiry);
+            return Task.CompletedTask;
+        }
+
         public void Remove(string key, bool exactMatch = true)
         {
             if (!exactMatch)
                 throw new NotSupportedException("This action is not supported yet");
 
             Cache.Remove(key);
+        }
+
+        public Task RemoveAsync(string key, bool exactMatch = true)
+        {
+            Remove(key, exactMatch);
+            return Task.CompletedTask;
         }
     }
 }
