@@ -22,5 +22,19 @@ namespace MammothCache
         /// <param name="key">The unique key to identify the cache entry</param>
         /// <returns>The value</returns>
         Task<T> GetAsync<T>(string key);
+
+        /// <summary>
+        /// Checks if the cache contains a key
+        /// </summary>
+        /// <param name="key">The unique key to identify the cache entry</param>
+        /// <returns>True if the value exists. Otherwise, false.</returns>
+        bool Contains(string key);
+
+        /// <summary>
+        /// Checks if the cache contains a key
+        /// </summary>
+        /// <param name="key">The unique key to identify the cache entry</param>
+        /// <returns>True if the value exists. Otherwise, false.</returns>
+        Task<bool> ContainsAsync(string key);
     }
 }

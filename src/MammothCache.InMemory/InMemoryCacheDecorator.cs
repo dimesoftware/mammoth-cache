@@ -25,6 +25,12 @@ namespace MammothCache
             return Task.FromResult(value);
         }
 
+        public bool Contains(string key)
+            => Cache.TryGetValue(key, out _);
+
+        public Task<bool> ContainsAsync(string key)
+            => Task.FromResult(Contains(key));
+
         public void Set<T>(string key, T value, TimeSpan? expiry = null)
         {
             MemoryCacheEntryOptions cacheEntryOptions = new();
