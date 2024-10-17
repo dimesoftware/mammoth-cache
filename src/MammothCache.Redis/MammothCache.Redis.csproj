@@ -9,9 +9,9 @@
 		<PackageIcon>logo.png</PackageIcon>
 	</PropertyGroup>
 	<PropertyGroup>
-		<AssemblyVersion>1.0.1.0</AssemblyVersion>
-		<FileVersion>1.0.1.0</FileVersion>
-		<PackageVersion>1.0.1</PackageVersion>
+		<AssemblyVersion>1.0.2.0</AssemblyVersion>
+		<FileVersion>1.0.2.0</FileVersion>
+		<PackageVersion>1.0.2</PackageVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<TargetFrameworks>net8.0</TargetFrameworks>

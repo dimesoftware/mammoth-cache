@@ -15,6 +15,7 @@ namespace MammothCache
                 {
                     ReferenceHandler = ReferenceHandler.IgnoreCycles,
                     DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                    WriteIndented = false
                 };
 
                 return opts;
