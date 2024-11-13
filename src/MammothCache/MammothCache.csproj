@@ -14,7 +14,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<Authors>Dime Software</Authors>
-		<TargetFrameworks>net8.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<AssemblyName>MammothCache</AssemblyName>
 		<PackageId>MammothCache</PackageId>
 		<PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
