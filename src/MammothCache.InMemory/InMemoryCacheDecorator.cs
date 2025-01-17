@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -57,6 +58,14 @@ namespace MammothCache
         public Task RemoveAsync(string key, bool exactMatch = true)
         {
             Remove(key, exactMatch);
+            return Task.CompletedTask;
+        }
+
+        public Task RemoveAsync(IEnumerable<string> keys)
+        {
+            foreach (string key in keys)
+                Remove(key, true);
+
             return Task.CompletedTask;
         }
     }

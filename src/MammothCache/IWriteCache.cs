@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MammothCache
@@ -29,14 +30,20 @@ namespace MammothCache
         /// Removes the value from the cache
         /// </summary>
         /// <param name="key">The identifier of the cache entry</param>
-        /// <param name="exactMatch">A boolean to indicate an exact match or a wildcared</param>
+        /// <param name="exactMatch">A boolean to indicate an exact match or a wildcard</param>
         void Remove(string key, bool exactMatch = true);
 
         /// <summary>
         /// Removes the value from the cache
         /// </summary>
         /// <param name="key">The identifier of the cache entry</param>
-        /// <param name="exactMatch">A boolean to indicate an exact match or a wildcared</param>
+        /// <param name="exactMatch">A boolean to indicate an exact match or a wildcard</param>
         Task RemoveAsync(string key, bool exactMatch = true);
+
+        /// <summary>
+        /// Removes items from the cache in batch
+        /// </summary>
+        /// <param name="keys">The keys to remove</param>
+        Task RemoveAsync(IEnumerable<string> keys);
     }
 }
