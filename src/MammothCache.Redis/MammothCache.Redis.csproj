@@ -10,8 +10,8 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<AssemblyVersion>1.1.0.0</AssemblyVersion>
-		<FileVersion>1.1.0.0-beta.1</FileVersion>
-		<PackageVersion>1.1.0</PackageVersion>
+		<FileVersion>1.1.0.0</FileVersion>
+		<PackageVersion>1.1.0-beta.1</PackageVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<TargetFrameworks>net8.0</TargetFrameworks>
