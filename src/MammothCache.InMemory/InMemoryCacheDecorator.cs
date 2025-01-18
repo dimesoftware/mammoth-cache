@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -12,12 +14,27 @@ namespace MammothCache
             Cache = cache;
         }
 
-        private IMemoryCache Cache { get; set; }
+        public IMemoryCache Cache { get; set; }
+
+        public static JsonSerializerOptions SerializationOptions
+        {
+            get
+            {
+                JsonSerializerOptions opts = new()
+                {
+                    ReferenceHandler = ReferenceHandler.IgnoreCycles,
+                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                    WriteIndented = false
+                };
+
+                return opts;
+            }
+        }
 
         public T Get<T>(string key)
         {
-            Cache.TryGetValue(key, out T value);
-            return value;
+            Cache.TryGetValue(key, out string value);
+            return !string.IsNullOrEmpty(value) ? JsonSerializer.Deserialize<T>(value) : default;
         }
 
         public Task<T> GetAsync<T>(string key)
@@ -33,6 +50,15 @@ namespace MammothCache
             => Task.FromResult(Contains(key));
 
         public void Set<T>(string key, T value, TimeSpan? expiry = null)
+        {
+            MemoryCacheEntryOptions cacheEntryOptions = new();
+            if (expiry != null)
+                cacheEntryOptions.SetSlidingExpiration(expiry.GetValueOrDefault());
+
+            Cache.Set(key, JsonSerializer.Serialize(value, SerializationOptions), cacheEntryOptions);
+        }
+
+        public void SetRaw(string key, string value, TimeSpan? expiry = null)
         {
             MemoryCacheEntryOptions cacheEntryOptions = new();
             if (expiry != null)

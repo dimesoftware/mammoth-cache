@@ -16,5 +16,17 @@ namespace MammothCache.InMemory.Tests
             IEnumerable<Customer> customers = await inMemoryCache.GetAsync<IEnumerable<Customer>>("customers");
             Assert.True(customers.Count() == 1);
         }
+
+        [Fact]
+        public async Task SetRaw_ArrayAsString_ShouldReturnArrayAsObjects()
+        {
+            MemoryCache memCache = new(new MemoryCacheOptions());
+            InMemoryCacheDecorator inMemoryCache = new(memCache);
+
+            await inMemoryCache.SetR
+
+            IEnumerable<Customer> customers = await inMemoryCache.GetAsync<IEnumerable<Customer>>("customers");
+            Assert.True(customers.Count() == 1);
+        }
     }
 }
