@@ -28,5 +28,11 @@ namespace MammothCache
             RedisValue value = await _cache.StringGetAsync(GetKey(key));
             return !value.IsNull ? JsonSerializer.Deserialize<T>(value) : default;
         }
+
+        public async Task<string> GetRawAsync(string key)
+        {
+            RedisValue value = await _cache.StringGetAsync(GetKey(key));
+            return value.ToString();
+        }
     }
 }
