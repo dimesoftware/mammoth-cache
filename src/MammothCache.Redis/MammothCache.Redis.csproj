@@ -9,9 +9,9 @@
 		<PackageIcon>logo.png</PackageIcon>
 	</PropertyGroup>
 	<PropertyGroup>
-		<AssemblyVersion>1.0.2.0</AssemblyVersion>
-		<FileVersion>1.0.2.0</FileVersion>
-		<PackageVersion>1.0.2</PackageVersion>
+		<AssemblyVersion>1.1.0.0</AssemblyVersion>
+		<FileVersion>1.1.0.0</FileVersion>
+		<PackageVersion>1.1.0-beta.5</PackageVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<TargetFrameworks>net8.0</TargetFrameworks>
@@ -19,7 +19,7 @@
 		<Company>Dime Software</Company>
 		<Product>Mammoth Cache</Product>
 		<Description>A caching library that decorates the Redis cache provider.</Description>
-		<Copyright>Copyright © 2024</Copyright>
+		<Copyright>Copyright © 2025</Copyright>
 		<PackageProjectUrl>https://github.com/dimesoftware/mammoth-cache</PackageProjectUrl>
 		<PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
 		<RepositoryUrl>https://github.com/dimesoftware/mammoth-cache</RepositoryUrl>
@@ -29,7 +29,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="StackExchange.Redis" Version="2.8.16" />
+		<PackageReference Include="StackExchange.Redis" Version="2.8.24" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using StackExchange.Redis;
@@ -38,6 +39,15 @@ namespace MammothCache
                 IEnumerable<RedisKey> keys = server.Keys(_cache.Database, pattern: GetKey(key) + "*");
                 foreach (RedisKey redisKey in keys)
                     await _cache.KeyDeleteAsync(redisKey);
+            }
+        }
+
+        public async Task RemoveAsync(IEnumerable<string> keys)
+        {
+            RedisKey[] keysToRemove = keys.Select(x => new RedisKey(x)).ToArray();
+            foreach (EndPoint endpoint in _connectionMultiplexer.GetEndPoints())
+            {
+                await _cache.KeyDeleteAsync(keysToRemove);
             }
         }
     }
