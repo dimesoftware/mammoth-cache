@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -75,16 +79,51 @@ namespace MammothCache
 
         public void Remove(string key, bool exactMatch = true)
         {
-            if (!exactMatch)
-                throw new NotSupportedException("This action is not supported yet");
+            if (exactMatch)
+            {
+                Cache.Remove(key);
+                return;
+            }
 
-            Cache.Remove(key);
+            if (Cache is MemoryCache memoryCache)
+            {
+                List<string> entries = GetAllKeys();
+                if (entries != null)
+                {
+                    string pattern = "^" + Regex.Escape(key).Replace("\\*", ".*").Replace("\\?", ".") + "$";
+                    Regex regex = new(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+                    foreach (string entry in entries.Where(entry => regex.IsMatch(entry)))
+                        memoryCache.Remove(entry);
+                }
+            }
         }
 
         public Task RemoveAsync(string key, bool exactMatch = true)
         {
             Remove(key, exactMatch);
             return Task.CompletedTask;
+        }
+
+        private List<string> GetAllKeys()
+        {
+            FieldInfo coherentState = typeof(MemoryCache).GetField("_coherentState", BindingFlags.NonPublic | BindingFlags.Instance);
+            object coherentStateValue = coherentState.GetValue(Cache);
+            PropertyInfo stringEntriesCollection = coherentStateValue.GetType().GetProperty("StringEntriesCollection", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            List<string> keys = [];
+
+            if (stringEntriesCollection.GetValue(coherentStateValue) is ICollection stringEntriesCollectionValue)
+            {
+                foreach (object item in stringEntriesCollectionValue)
+                {
+                    PropertyInfo methodInfo = item.GetType().GetProperty("Key");
+                    object val = methodInfo.GetValue(item);
+                    keys.Add(val.ToString());
+                }
+            }
+
+            return keys;
         }
 
         public Task RemoveAsync(IEnumerable<string> keys)

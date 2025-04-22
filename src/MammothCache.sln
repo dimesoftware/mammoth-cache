@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MammothCache.InMemory", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammothCache.Redis", "MammothCache.Redis\MammothCache.Redis.csproj", "{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammothCache.InMemory.Tests", "..\test\MammothCache.InMemory.Tests\MammothCache.InMemory.Tests.csproj", "{C7A1EE8B-243B-4668-A884-4ACF91449B52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38B1816D-29D7-4D5E-A1FB-1772FC0B044E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A1EE8B-243B-4668-A884-4ACF91449B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A1EE8B-243B-4668-A884-4ACF91449B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A1EE8B-243B-4668-A884-4ACF91449B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A1EE8B-243B-4668-A884-4ACF91449B52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7A1EE8B-243B-4668-A884-4ACF91449B52} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBFF732A-AEFB-4861-9BB6-18E1D577498B}
