@@ -107,24 +107,18 @@ namespace MammothCache
 
         private List<string> GetAllKeys()
         {
-            var coherentState = typeof(MemoryCache).GetField("_coherentState", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo coherentState = typeof(MemoryCache).GetField("_coherentState", BindingFlags.NonPublic | BindingFlags.Instance);
+            object coherentStateValue = coherentState.GetValue(Cache);
+            PropertyInfo stringEntriesCollection = coherentStateValue.GetType().GetProperty("StringEntriesCollection", BindingFlags.NonPublic | BindingFlags.Instance);
 
-            var coherentStateValue = coherentState.GetValue(Cache);
+            List<string> keys = [];
 
-            var stringEntriesCollection = coherentStateValue.GetType().GetProperty("StringEntriesCollection", BindingFlags.NonPublic | BindingFlags.Instance);
-
-            var stringEntriesCollectionValue = stringEntriesCollection.GetValue(coherentStateValue) as ICollection;
-
-            var keys = new List<string>();
-
-            if (stringEntriesCollectionValue != null)
+            if (stringEntriesCollection.GetValue(coherentStateValue) is ICollection stringEntriesCollectionValue)
             {
-                foreach (var item in stringEntriesCollectionValue)
+                foreach (object item in stringEntriesCollectionValue)
                 {
-                    var methodInfo = item.GetType().GetProperty("Key");
-
-                    var val = methodInfo.GetValue(item);
-
+                    PropertyInfo methodInfo = item.GetType().GetProperty("Key");
+                    object val = methodInfo.GetValue(item);
                     keys.Add(val.ToString());
                 }
             }
