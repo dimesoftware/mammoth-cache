@@ -1,6 +1,4 @@
-using MammothCache;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Options;
 
 namespace MammothCache.InMemory.Tests
 {
@@ -23,7 +21,7 @@ namespace MammothCache.InMemory.Tests
             MemoryCache memCache = new(new MemoryCacheOptions());
             InMemoryCacheDecorator inMemoryCache = new(memCache);
 
-            await inMemoryCache.SetR
+            inMemoryCache.SetRaw("customers", "[{\"Name\":\"Customer 1\"}]");
 
             IEnumerable<Customer> customers = await inMemoryCache.GetAsync<IEnumerable<Customer>>("customers");
             Assert.True(customers.Count() == 1);

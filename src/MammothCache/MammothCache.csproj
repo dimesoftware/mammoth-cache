@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<AssemblyVersion>1.1.0.0</AssemblyVersion>
-		<FileVersion>1.1.0.0</FileVersion>
-		<PackageVersion>1.1.0.0</PackageVersion>
+
+		<AssemblyVersion>2.0.0.0</AssemblyVersion>
+		<FileVersion>2.0.0.0</FileVersion>
+		<PackageVersion>2.0.0-alpha.1</PackageVersion>
 	</PropertyGroup>
 	<PropertyGroup>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -14,7 +15,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<Authors>Dime Software</Authors>
-		<TargetFrameworks>net8.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net10.0</TargetFrameworks>
 		<AssemblyName>MammothCache</AssemblyName>
 		<PackageId>MammothCache</PackageId>
 		<PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
