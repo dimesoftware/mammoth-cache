@@ -23,9 +23,9 @@ namespace MammothCache
         }
 
         public virtual void Set<T>(string key, T value, TimeSpan? expiry)
-            => _cache.StringSet(GetKey(key), JsonSerializer.Serialize(value, SerializationOptions), expiry);
+            => _cache.StringSet(GetKey(key), JsonSerializer.Serialize(value, SerializationOptions), expiry, false);
 
         public Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
-            => _cache.StringSetAsync(GetKey(key), JsonSerializer.Serialize(value, SerializationOptions), expiry);
+            => _cache.StringSetAsync(GetKey(key), JsonSerializer.Serialize(value, SerializationOptions), expiry, false);
     }
 }
