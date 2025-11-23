@@ -20,13 +20,15 @@ namespace MammothCache
         public virtual T Get<T>(string key)
         {
             RedisValue value = _cache.StringGet(GetKey(key));
-            return !value.IsNull ? JsonSerializer.Deserialize<T>(value) : default;
+            string jsonString = value.ToString();
+            return !value.IsNull ? JsonSerializer.Deserialize<T>(jsonString, (JsonSerializerOptions)null) : default;
         }
 
         public async Task<T> GetAsync<T>(string key)
         {
             RedisValue value = await _cache.StringGetAsync(GetKey(key));
-            return !value.IsNull ? JsonSerializer.Deserialize<T>(value) : default;
+            string jsonString = value.ToString();
+            return !value.IsNull ? JsonSerializer.Deserialize<T>(jsonString, (JsonSerializerOptions)null) : default;
         }
 
         public async Task<string> GetRawAsync(string key)

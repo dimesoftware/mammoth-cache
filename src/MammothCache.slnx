@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MammothCache.InMemory/MammothCache.InMemory.csproj" />
+  <Project Path="MammothCache.Redis/MammothCache.Redis.csproj" />
+  <Project Path="MammothCache/MammothCache.csproj" />
+</Solution>
